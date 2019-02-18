@@ -5,6 +5,7 @@ const download = uri =>
         uri,
         gzip: true,
         jar: true,
+        timeout: 10000,
         headers: {
             "User-Agent":
                 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) " +

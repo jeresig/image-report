@@ -15,13 +15,13 @@ class Database {
                 images.id as imageID,
                 sources.title as sourceTitle,
                 sources.url as sourceUrl
-            FROM links
-            INNER JOIN images ON images.link_id = links.id
+            FROM images
+            INNER JOIN links ON images.link_id = links.id
             INNER JOIN sources ON sources.id = links.source_id
             WHERE links.status = 2
                 AND images.status = 2
                 AND images.last_updated >= ${startTime}
-            ORDER BY links.last_updated DESC;
+            ORDER BY images.last_updated DESC;
         `);
     }
 
